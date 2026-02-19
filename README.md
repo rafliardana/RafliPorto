@@ -4,7 +4,7 @@ A modern, responsive portfolio website showcasing my projects, skills, and profe
 
 ## 🌐 Live Demo
 
-Visit the live portfolio: [Open index.html in your browser]
+Visit the live portfolio: https://rafliardana.github.io/RafliPorto
 
 ## ✨ Features
 
