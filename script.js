@@ -75,6 +75,7 @@ if (contactForm && formStatus) {
                 formStatus.textContent = result.message || 'Failed to send message. Please try again.';
             }
         } catch (error) {
+            console.error('Contact form submission failed:', error);
             formStatus.textContent = 'Network error. Please try again later.';
         }
     });
