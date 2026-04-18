@@ -54,10 +54,30 @@ const contactForm = document.getElementById('contact-form');
 const formStatus = document.getElementById('form-status');
 
 if (contactForm && formStatus) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        contactForm.reset();
-        formStatus.textContent = 'Demo mode: your message was captured locally and not sent to a server.';
+        formStatus.textContent = 'Sending message...';
+
+        const formData = new FormData(contactForm);
+
+        try {
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();
+
+            if (response.ok && result.success) {
+                contactForm.reset();
+                formStatus.textContent = 'Message sent successfully!';
+            } else {
+                formStatus.textContent = result.message || 'Failed to send message. Please try again.';
+            }
+        } catch (error) {
+            console.error('Contact form submission failed:', error);
+            formStatus.textContent = 'Network error. Please try again later.';
+        }
     });
 }
 
