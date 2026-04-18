@@ -12,7 +12,7 @@ Visit the live portfolio: https://rafliardana.github.io/RafliPorto
 - **Modern UI**: Clean and professional design with smooth animations
 - **Project Showcase**: Display of featured projects with descriptions and links
 - **Skills Section**: Comprehensive overview of technical skills and technologies
-- **Contact Form**: Direct contact form submission for inquiries
+- **Contact Form**: Interactive contact form for inquiries
 - **Social Links**: Direct links to GitHub, LinkedIn, and other social profiles
 - **Design Portfolio Link**: Integration with Framer design portfolio at [https://rafliporto.framer.website/](https://rafliporto.framer.website/)
 

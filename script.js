@@ -49,6 +49,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Contact form handler
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+if (contactForm && formStatus) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        contactForm.reset();
+        formStatus.textContent = 'Thank you! Your message is ready to be shared.';
+    });
+}
+
 // Intersection Observer for fade-in animations
 const observerOptions = {
     threshold: 0.1,
