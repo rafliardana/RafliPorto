@@ -49,24 +49,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Form submission handler
+// Contact form handler
 const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(contactForm);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const message = formData.get('message');
-    
-    // For now, just show an alert (in production, this would send to a backend)
-    alert(`Thank you for your message, ${name}! I'll get back to you soon at ${email}.`);
-    
-    // Reset form
-    contactForm.reset();
-});
+if (contactForm && formStatus) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        contactForm.reset();
+        formStatus.textContent = 'Demo mode: your message was captured locally and not sent to a server.';
+    });
+}
 
 // Intersection Observer for fade-in animations
 const observerOptions = {
