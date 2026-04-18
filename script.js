@@ -57,7 +57,7 @@ if (contactForm && formStatus) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         contactForm.reset();
-        formStatus.textContent = 'Thank you! Your message is ready to be shared.';
+        formStatus.textContent = 'Demo mode: your message was captured locally and not sent to a server.';
     });
 }
 
