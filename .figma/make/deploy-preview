@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-build_dir=".figma/make/dist"
-rm -rf "$build_dir"
-mkdir -p "$build_dir"
-cp index.html style.css script.js CNAME "$build_dir/"
+pnpm build
+build_dir="out"
 
 [[ -d "$build_dir" ]] || {
   echo "Expected build output at $build_dir" >&2

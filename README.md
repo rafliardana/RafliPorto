@@ -1,129 +1,85 @@
-# Rafli Ardana - Portfolio Website
+# M. Rafli Ardhana — Portfolio
 
-A static, responsive portfolio website for showcasing Rafli Ardana's profile, projects, technical skills, and contact information.
+A responsive personal portfolio based on the visual language and component architecture of
+[Magic UI Portfolio](https://github.com/magicuidesign/portfolio). It presents Rafli's profile,
+work experience, education, technical skills, selected projects, and contact form in a compact
+single-page experience.
 
-## Live Demo
+## Live site
 
-Visit the portfolio at [https://rafliard.my.id](https://rafliard.my.id).
+[https://rafliard.my.id](https://rafliard.my.id)
 
 ## Features
 
-- Responsive navigation with a mobile menu and active-section highlighting
-- Smooth scrolling between page sections
-- Single-column About section focused on the profile description
-- Five featured project cards in a three-column desktop grid
-- Skills grouped into Frontend, Backend, Design, and Tools categories
-- Scroll-triggered reveal animations for content cards
-- Contact form submission through Web3Forms with inline status feedback
-- External links to GitHub, LinkedIn, project repositories, live demos, and the Framer design portfolio
-- Responsive layouts for desktop, tablet, and mobile screens
+- Seven focused sections: Hero, About, Work Experience, Education, Skills, Projects, and Contact
+- Responsive single-column layout with a two-column project grid
+- Magic UI blur/fade motion and flickering-grid details
+- Expandable, keyboard-accessible work experience entries
+- Fixed dock navigation with social links and Light/Dark/System theme support
+- Five project cards with local preview artwork and verified website/source links
+- Web3Forms contact form with validation, loading, success, and error states
+- Reduced-motion support, visible focus states, semantic headings, and accessible labels
+- Static export for Figma Make deployment and the `rafliard.my.id` custom domain
 
-## Sections
+## Tech stack
 
-1. **Home** - Introduction, project call-to-action, and social links
-2. **About** - Professional profile and background
-3. **Projects** - Featured work with descriptions, technology tags, source code, and demo links where available
-4. **Skills** - Technologies and tools grouped by category
-5. **Contact** - Email, location, and a contact form
-
-## Featured Projects
-
-| Project | Description | Links |
-| --- | --- | --- |
-| TokoKrenkass | E-commerce web application built with Firebase | [Code](https://github.com/rafliardana/tokokrenkass) · [Live Demo](https://krenkass.web.app/) |
-| RetailSIM | Retail simulation and management system | [Code](https://github.com/ALIIF28/simretail4) · [Live Demo](https://simretail4.vercel.app) |
-| Produk Online | Online product catalog with Firebase integration | [Live Demo](https://produk-online-50a30.web.app/) |
-| Sistem Bouquet Kustom | Custom bouquet ordering and management system for Faedah Shop | [Code](https://github.com/rafliardana/Sistem-Bouquet-Kustom-Faedah-Shop) |
-| Sistem Inventory | Inventory system for products, stock levels, and operational records | [Code](https://github.com/crendyyy/sistemInventory) |
-
-## Skills
-
-- **Frontend Development:** HTML5, CSS3, JavaScript, React, PHP, Laravel
-- **Backend Development:** MySQL, PostgreSQL, Microsoft SQL Server, Firebase, Supabase, Cloudinary
-- **Design:** UI/UX Design, Figma, Framer, Canva, Draw.io / PlantUML
-- **Tools & Others:** Git & GitHub, Laragon / XAMPP, SQL Server Management Studio, VS Code, Docker, Agile
-
-## Technologies
-
-- HTML5
-- CSS3 with CSS Grid, Flexbox, custom properties, transitions, and animations
-- Vanilla JavaScript
-- Font Awesome 6.4.0
+- Next.js 16 App Router
+- React 19 and TypeScript
+- Tailwind CSS 4
+- shadcn/ui primitives and Magic UI components
+- Motion, Radix UI, next-themes, and Lucide icons
 - Web3Forms
+- pnpm
 
-The site uses the operating system's native sans-serif font stack and does not require a package manager or application framework.
-
-## Responsive Layout
-
-The stylesheet defines the following breakpoints:
-
-- `968px` and below: contact and skills sections switch to one column
-- `768px` and below: navigation becomes a mobile menu, projects switch to one column, and hero buttons stack vertically
-- `480px` and below: spacing and typography are reduced for smaller screens
-
-On larger screens, the Projects section uses three columns and two explicit grid rows.
-
-## Getting Started
-
-### Prerequisites
-
-- A modern web browser
-- Optional: Python 3 for serving the site locally
-
-### Run locally
-
-Clone the repository:
+## Development
 
 ```bash
-git clone https://github.com/rafliardana/RafliPorto.git
-cd RafliPorto
+pnpm install --frozen-lockfile
+pnpm dev
 ```
 
-Open `index.html` directly in a browser, or start a local static server:
+Run checks:
 
 ```bash
-python3 -m http.server 8000
+pnpm lint
+pnpm build
 ```
 
-Then open `http://localhost:8000`.
+`pnpm build` creates a static export in `out/`.
 
-No dependency installation or build step is required for local development.
-
-## Project Structure
+## Project structure
 
 ```text
-RafliPorto/
-├── .figma/
-│   └── make/             # Figma Make lifecycle and deployment configuration
-├── CNAME                 # Custom domain configuration
-├── index.html            # Page structure and portfolio content
-├── style.css             # Layout, visual styles, animations, and responsive rules
-├── script.js             # Navigation, scrolling, animations, and form handling
-└── README.md             # Project documentation
+src/
+├── app/                    # Page, layout, metadata routes, and global theme
+├── components/
+│   ├── magicui/            # Motion, dock, and flickering-grid components
+│   ├── ui/                 # Reusable shadcn/Radix primitives
+│   └── *.tsx               # Portfolio-specific components
+├── data/resume.tsx         # Central portfolio content and links
+└── lib/utils.ts            # Shared utility helpers
+public/
+├── projects/               # Local project preview artwork
+├── CNAME                   # Custom domain for the static output
+└── og-card.png             # Social sharing image
 ```
 
-## Customization
+## Updating content
 
-- Edit personal details, projects, skills, and links in `index.html`.
-- Update colors through the custom properties in the `:root` block of `style.css`.
-- Adjust layout and breakpoints in `style.css`.
-- Modify navigation, animations, or contact form behavior in `script.js`.
-- Replace the Web3Forms access key in `index.html` when using a different form account.
-- Update `CNAME` when deploying to another custom domain.
+- Edit personal details, work, education, skills, projects, and links in
+  `src/data/resume.tsx`.
+- Replace project artwork in `public/projects/` while retaining its filename, or update the
+  associated `image` path in the data file.
+- To add a profile photo, put it in `public/` and add an `AvatarImage` inside the Hero avatar;
+  the `MRA` initials remain a safe fallback.
+- The Web3Forms form behavior is implemented in `src/components/contact-form.tsx`.
 
-## External Links
+## Figma Make lifecycle
 
-- [GitHub](https://github.com/rafliardana)
-- [Design Portfolio](https://rafliporto.framer.website/)
+The scripts in `.figma/make/` install pnpm dependencies, run the supervised Next.js development
+server, build the static export, and deploy the `out/` directory for production or preview.
 
-## Author
+## Credits
 
-**Rafli Ardana**
-
-- GitHub: [@rafliardana](https://github.com/rafliardana)
-- Design portfolio: [rafliporto.framer.website](https://rafliporto.framer.website/)
-
-## Acknowledgments
-
-- [Font Awesome](https://fontawesome.com/) for interface icons
-- Design inspiration from modern portfolio websites
+The interface is adapted from the MIT-licensed
+[magicuidesign/portfolio](https://github.com/magicuidesign/portfolio) project. See `LICENSE`.

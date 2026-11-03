@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# This static site has no project dependencies to install.
-exit 0
+exec pnpm install --frozen-lockfile
