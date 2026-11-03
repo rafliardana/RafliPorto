@@ -270,9 +270,14 @@ section {
 
 .about-content {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr;
     gap: 3rem;
     align-items: center;
+    justify-items: center;
+}
+
+#about .about-text {
+    width: min(1139px, 100%);
 }
 
 .about-text p {
