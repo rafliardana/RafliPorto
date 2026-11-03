@@ -63,44 +63,10 @@ The stylesheet defines the following breakpoints:
 
 On larger screens, the Projects section uses three columns and two explicit grid rows.
 
-## Getting Started
-
 ### Prerequisites
 
 - A modern web browser
 - Optional: Python 3 for serving the site locally
-
-### Run locally
-
-Clone the repository:
-
-```bash
-git clone https://github.com/rafliardana/RafliPorto.git
-cd RafliPorto
-```
-
-Open `index.html` directly in a browser, or start a local static server:
-
-```bash
-python3 -m http.server 8000
-```
-
-Then open `http://localhost:8000`.
-
-No dependency installation or build step is required for local development.
-
-## Project Structure
-
-```text
-RafliPorto/
-├── .figma/
-│   └── make/             # Figma Make lifecycle and deployment configuration
-├── CNAME                 # Custom domain configuration
-├── index.html            # Page structure and portfolio content
-├── style.css             # Layout, visual styles, animations, and responsive rules
-├── script.js             # Navigation, scrolling, animations, and form handling
-└── README.md             # Project documentation
-```
 
 ## Customization
 
