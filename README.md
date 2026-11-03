@@ -1,119 +1,129 @@
 # Rafli Ardana - Portfolio Website
 
-A modern, responsive portfolio website showcasing my projects, skills, and professional experience.
+A static, responsive portfolio website for showcasing Rafli Ardana's profile, projects, technical skills, and contact information.
 
-## 🌐 Live Demo
+## Live Demo
 
-Visit the live portfolio: https://rafliardana.github.io/RafliPorto
+Visit the portfolio at [https://rafliard.my.id](https://rafliard.my.id).
 
-## ✨ Features
+## Features
 
-- **Responsive Design**: Fully responsive layout that works on desktop, tablet, and mobile devices
-- **Modern UI**: Clean and professional design with smooth animations
-- **Project Showcase**: Display of featured projects with descriptions and links
-- **Skills Section**: Comprehensive overview of technical skills and technologies
-- **Contact Form**: Interactive contact form for inquiries
-- **Social Links**: Direct links to GitHub, LinkedIn, and other social profiles
-- **Design Portfolio Link**: Integration with Framer design portfolio at [https://rafliporto.framer.website/](https://rafliporto.framer.website/)
+- Responsive navigation with a mobile menu and active-section highlighting
+- Smooth scrolling between page sections
+- Single-column About section focused on the profile description
+- Five featured project cards in a three-column desktop grid
+- Skills grouped into Frontend, Backend, Design, and Tools categories
+- Scroll-triggered reveal animations for content cards
+- Contact form submission through Web3Forms with inline status feedback
+- External links to GitHub, LinkedIn, project repositories, live demos, and the Framer design portfolio
+- Responsive layouts for desktop, tablet, and mobile screens
 
-## 🚀 Getting Started
+## Sections
+
+1. **Home** - Introduction, project call-to-action, and social links
+2. **About** - Professional profile and background
+3. **Projects** - Featured work with descriptions, technology tags, source code, and demo links where available
+4. **Skills** - Technologies and tools grouped by category
+5. **Contact** - Email, location, and a contact form
+
+## Featured Projects
+
+| Project | Description | Links |
+| --- | --- | --- |
+| TokoKrenkass | E-commerce web application built with Firebase | [Code](https://github.com/rafliardana/tokokrenkass) · [Live Demo](https://krenkass.web.app/) |
+| RetailSIM | Retail simulation and management system | [Code](https://github.com/ALIIF28/simretail4) · [Live Demo](https://simretail4.vercel.app) |
+| Produk Online | Online product catalog with Firebase integration | [Live Demo](https://produk-online-50a30.web.app/) |
+| Sistem Bouquet Kustom | Custom bouquet ordering and management system for Faedah Shop | [Code](https://github.com/rafliardana/Sistem-Bouquet-Kustom-Faedah-Shop) |
+| Sistem Inventory | Inventory system for products, stock levels, and operational records | [Code](https://github.com/crendyyy/sistemInventory) |
+
+## Skills
+
+- **Frontend Development:** HTML5, CSS3, JavaScript, React, PHP, Laravel
+- **Backend Development:** MySQL, PostgreSQL, Microsoft SQL Server, Firebase, Supabase, Cloudinary
+- **Design:** UI/UX Design, Figma, Framer, Canva, Draw.io / PlantUML
+- **Tools & Others:** Git & GitHub, Laragon / XAMPP, SQL Server Management Studio, VS Code, Docker, Agile
+
+## Technologies
+
+- HTML5
+- CSS3 with CSS Grid, Flexbox, custom properties, transitions, and animations
+- Vanilla JavaScript
+- Font Awesome 6.4.0
+- Web3Forms
+
+The site uses the operating system's native sans-serif font stack and does not require a package manager or application framework.
+
+## Responsive Layout
+
+The stylesheet defines the following breakpoints:
+
+- `968px` and below: contact and skills sections switch to one column
+- `768px` and below: navigation becomes a mobile menu, projects switch to one column, and hero buttons stack vertically
+- `480px` and below: spacing and typography are reduced for smaller screens
+
+On larger screens, the Projects section uses three columns and two explicit grid rows.
+
+## Getting Started
 
 ### Prerequisites
 
-- A modern web browser (Chrome, Firefox, Safari, Edge)
-- No build tools or dependencies required!
+- A modern web browser
+- Optional: Python 3 for serving the site locally
 
-### Installation
+### Run locally
 
-1. Clone the repository:
+Clone the repository:
+
 ```bash
 git clone https://github.com/rafliardana/RafliPorto.git
 cd RafliPorto
 ```
 
-2. Open `index.html` in your web browser:
+Open `index.html` directly in a browser, or start a local static server:
+
 ```bash
-# On macOS
-open index.html
-
-# On Linux
-xdg-open index.html
-
-# On Windows
-start index.html
+python3 -m http.server 8000
 ```
 
-Or simply double-click the `index.html` file to open it in your default browser.
+Then open `http://localhost:8000`.
 
-## 📁 Project Structure
+No dependency installation or build step is required for local development.
 
-```
+## Project Structure
+
+```text
 RafliPorto/
-├── index.html          # Main HTML file
-├── style.css          # CSS styles and responsive design
-├── script.js          # JavaScript for interactivity
-└── README.md          # Project documentation
+├── .figma/
+│   └── make/             # Figma Make lifecycle and deployment configuration
+├── CNAME                 # Custom domain configuration
+├── index.html            # Page structure and portfolio content
+├── style.css             # Layout, visual styles, animations, and responsive rules
+├── script.js             # Navigation, scrolling, animations, and form handling
+└── README.md             # Project documentation
 ```
 
-## 🎨 Sections
+## Customization
 
-1. **Home/Hero**: Introduction with call-to-action buttons
-2. **About**: Professional background and design portfolio link
-3. **Projects**: Featured projects with descriptions and links
-4. **Skills**: Technical skills organized by category
-5. **Contact**: Contact information and form
+- Edit personal details, projects, skills, and links in `index.html`.
+- Update colors through the custom properties in the `:root` block of `style.css`.
+- Adjust layout and breakpoints in `style.css`.
+- Modify navigation, animations, or contact form behavior in `script.js`.
+- Replace the Web3Forms access key in `index.html` when using a different form account.
+- Update `CNAME` when deploying to another custom domain.
 
-## 🛠️ Technologies Used
+## External Links
 
-- HTML5
-- CSS3 (with CSS Grid and Flexbox)
-- Vanilla JavaScript
-- Font Awesome Icons
-- Google Fonts
+- [GitHub](https://github.com/rafliardana)
+- [Design Portfolio](https://rafliporto.framer.website/)
 
-## 📱 Responsive Breakpoints
-
-- Desktop: 1200px+
-- Tablet: 768px - 1199px
-- Mobile: < 768px
-
-## 🎯 Customization
-
-To customize the portfolio for your own use:
-
-1. **Update Personal Information**: 
-   - Edit the text content in `index.html`
-   - Update name, title, and descriptions
-
-2. **Add Projects**: 
-   - Add new project cards in the Projects section of `index.html`
-   - Update project descriptions, tags, and links
-
-3. **Modify Colors**: 
-   - Edit CSS variables in `style.css` (`:root` section)
-   - Change `--primary-color`, `--secondary-color`, etc.
-
-4. **Update Contact Info**: 
-   - Update email and social links in `index.html`
-   - Modify contact form behavior in `script.js`
-
-## 🔗 Links
-
-- **Design Portfolio**: [https://rafliporto.framer.website/](https://rafliporto.framer.website/)
-- **GitHub**: [https://github.com/rafliardana](https://github.com/rafliardana)
-
-## 📄 License
-
-This project is open source and available for personal and commercial use.
-
-## 👤 Author
+## Author
 
 **Rafli Ardana**
-- Portfolio: [https://rafliporto.framer.website/](https://rafliporto.framer.website/)
+
 - GitHub: [@rafliardana](https://github.com/rafliardana)
+- Design portfolio: [rafliporto.framer.website](https://rafliporto.framer.website/)
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
-- Font Awesome for icons
+- [Font Awesome](https://fontawesome.com/) for interface icons
 - Design inspiration from modern portfolio websites
-- Built with ❤️ and vanilla web technologies
