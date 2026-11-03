@@ -121,7 +121,6 @@ RafliPorto/
 **Rafli Ardana**
 
 - GitHub: [@rafliardana](https://github.com/rafliardana)
-- Design portfolio: [rafliporto.framer.website](https://rafliporto.framer.website/)
 
 ## Acknowledgments
 
