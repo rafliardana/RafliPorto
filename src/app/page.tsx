@@ -199,8 +199,7 @@ export default function Page() {
                 </a>
                 {[
                   ["LinkedIn", DATA.contact.linkedin],
-                  ["GitHub", DATA.contact.github],
-                  ["Design portfolio", DATA.contact.design]
+                  ["GitHub", DATA.contact.github]
                 ].map(([label, href]) => (
                   <a
                     key={label}
